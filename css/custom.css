@@ -6,3 +6,11 @@
 .left {
     float: left;
 }
+
+/*.reveal pre {*/
+/*    width: 100%;*/
+/*}*/
+
+.reveal pre code {
+    max-height: 450px;
+}
