@@ -1,0 +1,7 @@
+{
+  "autoAnimate": true,
+  "highlightTheme": "darcula",
+  "highlight": {
+    "beforeHighlight": {}
+  }
+}

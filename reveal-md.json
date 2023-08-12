@@ -1,0 +1,7 @@
+{
+  "port": 1920,
+  "css": [
+    "css/custom.css",
+    "css/highlights/darcula.css"
+  ]
+}

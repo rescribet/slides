@@ -1,0 +1,137 @@
+@font-face {
+    font-family: "JetBrains mono";
+    src: url('./webfonts/JetBrainsMono-Regular.woff2') format('woff2');
+}
+
+.reveal .hljs {
+    font-family: "JetBrains mono", sans-serif;
+    color: #E1E8EF;
+    background: #2B2B2B;
+}
+
+.reveal .hljs-keyword,
+.reveal .kotlin .hljs-literal,
+.reveal .hljs-meta .hljs-keyword {
+    color: #e28437;
+}
+
+.reveal .hljs-meta .hljs-string,
+.reveal .hljs-string {
+    color: #81a56e;
+}
+
+.reveal .hljs-function .hljs-title {
+    color: #FFC66D;
+}
+
+.reveal .hljs-title.class_ {
+    color: #E1E8EF;
+}
+
+.hljs-number {
+    color: #6897BB;
+}
+
+.reveal .hljs-function .hljs-type {
+    color: #20999D;
+}
+
+
+.reveal .hljs-variable.language_,
+.reveal .hljs-symbol,
+.reveal .hljs-selector-class,
+.reveal .hljs-selector-id,
+.reveal .hljs-selector-tag,
+.reveal .hljs-template-tag,
+.reveal .hljs-selector-attr,
+.reveal .hljs-selector-pseudo,
+.reveal .hljs-literal,
+.reveal .hljs-name,
+.reveal .hljs-built_in {
+    color: #FFFFFF;
+}
+
+.hljs-subst,
+.hljs-title {
+    font-weight: normal;
+    color: #000;
+}
+
+.hljs-title.function_ {
+    color: #7A7A43;
+}
+
+.hljs-code,
+.hljs-comment,
+.hljs-quote {
+    color: #8C8C8C;
+    font-style: italic;
+}
+
+.hljs-meta {
+    color: #9E880D;
+}
+
+.hljs-section {
+    color: #871094;
+}
+
+.hljs-property,
+.hljs-attr {
+    color: #871094;
+}
+
+.hljs-attribute {
+    color: #174AD4;
+}
+
+
+.hljs-regexp {
+    color: #264EFF;
+}
+
+.hljs-link {
+    text-decoration: underline;
+    color: #006DCC;
+}
+
+
+.hljs-char.escape_ {
+    color: #0037A6;
+}
+
+.hljs-doctag {
+    text-decoration: underline;
+}
+
+.hljs-template-variable {
+    color: #248F8F;
+}
+
+.hljs-addition {
+    background: #BEE6BE;
+}
+
+.hljs-deletion {
+    background: #D6D6D6;
+}
+
+.hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-strong {
+    font-weight: bold;
+}
+
+.hljs-variable,
+.hljs-operator,
+.hljs-punctuation,
+.hljs-title.class_.inherited__,
+.hljs-title.class_,
+.hljs-params,
+.hljs-bullet,
+.hljs-formula,
+.hljs-tag {
+    /* purposely ignored */
+}
