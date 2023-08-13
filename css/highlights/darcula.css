@@ -32,8 +32,14 @@
     color: #6897BB;
 }
 
-.reveal .hljs-function .hljs-type {
+.reveal .hljs-function .hljs-type,
+.reveal .hljs-params .hljs-type {
     color: #FFF;
+}
+
+.hljs-property,
+.hljs-attr {
+    color: #B58EC9;
 }
 
 
@@ -73,11 +79,6 @@
 }
 
 .hljs-section {
-    color: #871094;
-}
-
-.hljs-property,
-.hljs-attr {
     color: #871094;
 }
 

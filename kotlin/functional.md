@@ -21,6 +21,39 @@ Thom van Kalkeren
 
 ---
 
+# Kotlin
+Misconceptions
+
+----
+
+## Kotlin is not
+
+- A functional language
+- An OOP language
+- A JVM language
+- A language for Android
+- Difficult to learn
+
+----
+
+## Kotlin is
+
+- A multi-paradigm language
+- A multi-platform language
+- Non-dogmatic and Pragmatic
+- Trivial to add in existing projects
+- Steadily evolving
+- <span style="color: #e28437">Fun</span>!
+
+Note:
+    Kotlin is a multi-paradigm language. It supports both object-oriented and functional programming.
+    Kotlin is a standalone language. It is not a JVM language, it is not a language for Android.
+    Kotlin is a language with multiple targets. It can be compiled to JVM bytecode, WASM, JavaScript, and native code.
+    Kotlin Native compiles to iOS, macOS, Android, Windows, and Linux. 
+    Kotlin is fun. It is easy to learn and use.
+
+---
+
 <h1>
     <span style="color: #e28437">Fun</span>ctions
 </h1>
