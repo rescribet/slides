@@ -19,10 +19,37 @@ revealOptions:
 
 Thom van Kalkeren
 
+Note:
+    This talk only considers the standard library and official extensions.
+    Arrow, the cult-level FP library, only enhances the experience even further.
+
 ---
 
 # Kotlin
-Misconceptions
+In general
+
+----
+
+## Kotlin adoption
+
+- ±5.3M developers
+- Google: 2900 engineers with 15+ million LoC
+- Google: Runs for billions of users
+- Google: Runs on hundreds of thousands of servers
+- Meta: 10+ million LoC
+- Adobe: handles 50+ billion events per day
+- Amazon: Prime video with 100s of thousands RPS
+
+Note:
+    As of 2023
+    Larger than Swift, Scala, Go, and Rust.
+    5.3 source SlashData / Developer Nation Global
+    Google ±2 year-over-year growth
+    Google working towards Kotlin-first
+    Meta mostly Android apps
+    Adobe: 50bn amounts to 600k events per second using vert.x, coroutines, and cassandra
+    Adobe: 2X throughput at 25% reduced costs
+    Adobe: Coroutines & Flow got better performance than RxJava
 
 ----
 
@@ -48,7 +75,7 @@ Misconceptions
 Note:
     Kotlin is a multi-paradigm language. It supports both object-oriented and functional programming.
     Kotlin is a standalone language. It is not a JVM language, it is not a language for Android.
-    Kotlin is a language with multiple targets. It can be compiled to JVM bytecode, WASM, JavaScript, and native code.
+    Kotlin is a language with multiple targets. It has compilers for JVM bytecode, WASM, JavaScript, and native code.
     Kotlin Native compiles to iOS, macOS, Android, Windows, and Linux. 
     Kotlin is fun. It is easy to learn and use.
 
@@ -212,6 +239,20 @@ data class User(
 
 ## Referential immutability
 
+Deriving data is easy too
+
+```kotlin
+val paul = john.copy(name = "Paul")
+```
+
+<small>
+(Arrow, the Kotlin FP library, contains lenses too)
+</small>
+
+----
+
+## Referential immutability
+
 Arguments cannot be reassigned
 
 ```kotlin
@@ -219,6 +260,8 @@ fun contrived(arg: String) {
     arg = "error" // Val cannot be reassigned
 }
 ```
+
+Note: have seen this in some languages, which is crazy.
 
 ----
 
@@ -334,9 +377,13 @@ fun readFromStorage(
 ): Map<String, CacheEntry> {
     return requested
         .mapNotNull { storage.getCacheEntry(it.iri, lang) }
+        .filter { !it.isEmptyOrNotPublic() }
         .associateBy { it.iri }
 }
 ```
+
+Note:
+    Even though getCacheEntry is suspend, we can still use regular functions like `mapNotNull`.
 
 ----
 
@@ -468,6 +515,34 @@ Note:
     Not enforced for all I/O
     I.e. println performs blocking IO, yet is not suspend.
 
+----
+
+## IO
+
+Context receivers as effect markers
+
+```kotlin
+fun interface Logger {
+    fun log(msg: String)
+}
+
+context(Logger)
+fun hello() {
+    this@Logger.log("hello world!")
+}
+
+fun main() {
+    with(Logger { msg -> println(msg) }) {
+        hello()
+    }
+}
+```
+
+Note:
+    Context receivers can be used as dependency injection, dualling as effect markers, and in DSL builders.
+    `this@Logger` is optional
+    With great power...
+
 ---
 
 # Reactive Streams
@@ -540,3 +615,17 @@ fun flowFrom(api: ChatApi): Flow<T> = callbackFlow {
     awaitClose { api.unregister(callback) }
 }
 ```
+
+---
+
+# In summary
+
+- Core concepts built-in
+- Leverage Java ecosystem
+- Will run everywhere
+- Kotlin is a language for the ultraverse
+
+Note:
+    Immutability, nullability, coroutines, flow, reactive streams, DSLs, etc.
+    
+    When letting CoPilot autocomplete it suggested 'for the ultraverse' as the final completion.
