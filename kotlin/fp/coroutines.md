@@ -38,8 +38,8 @@ Note: Regular values have the same behaviour as blocking IO.
 
 Interaction
 
-![plain](..%2Fassets%2Fplain.png)
-![suspend](..%2Fassets%2Fsuspend.png)
+![plain](../assets/plain.png)
+![suspend](../assets/suspend.png)
 
 ----
 
